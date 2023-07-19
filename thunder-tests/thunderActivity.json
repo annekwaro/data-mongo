@@ -139,12 +139,12 @@
         "method": "POST",
         "sortNum": 0,
         "created": "2023-07-19T14:35:04.482Z",
-        "modified": "2023-07-19T14:35:04.482Z",
+        "modified": "2023-07-19T14:55:33.668Z",
         "headers": [],
         "params": [],
         "body": {
             "type": "json",
-            "raw": "{\n    \"name\": \"Test\",\n    \"age\": 1,\n    \"address\": {\n      \"number\": \"56\",\n      \"street\": \"rue exemple\",\n      \"country\": \"France\",\n      \"city\": \"Grenoble\"\n    }\n  }",
+            "raw": "{\n    \"name\": \"Jon\",\n    \"age\": 61,\n    \"address\": {\n      \"number\": \"56\",\n      \"street\": \"rue exemple\",\n      \"country\": \"France\",\n      \"city\": \"Grenoble\"\n    }\n  }",
             "form": []
         },
         "tests": []

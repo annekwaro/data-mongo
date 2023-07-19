@@ -19,11 +19,47 @@ db.movies.find({'directors.1':{$exists:true}})
 // db.movies.find({$expr:{$gt:[{$size:'$directors'}, 1]}})
 
 
-db.movies.aggregate({
+db.movies.aggregate(
+{
     $group:{
         _id:'$year', 
         moviePerYear:{
             $count:{}
+        },
+        avgRating:{
+            $avg:'$imdb.rating'
         }
     }
-})
+},
+{
+    $match: {moviePerYear:{$gt:3}}
+},
+{
+    $project: {
+        moviePerYear: true,
+        avgRating: {$round:['$avgRating', 1]}
+    }
+},
+{ 
+    $sort:{
+        avgRating:-1
+    }
+}
+);
+//On "déballe" le tableau cast pour faire en sorte d'avoir un acteur unique par film (mais le film répété pour chaque membre du cast)
+//On regroupe les document par le cast, donc par acteur, et on compte combien de document est associé à chaque acteur
+//On fait un match pour filtrer uniquement les documents/acteurs qui ont joués dans 20 films ou plus
+db.movies.aggregate(
+    {
+        $unwind: '$cast'
+    },
+    {
+        $group: {
+            _id:'$cast',
+            moviePlayedIn: {$count:{}}
+        }
+    },
+    {
+        $match: {moviePlayedIn:{$gte:20}}
+    }
+    )

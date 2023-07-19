@@ -11,5 +11,10 @@ export const personRepository = {
     },
     findById(_id:string) {
         return collection.findOne(new ObjectId(_id));
+    },
+    async persist(person:Person) {
+        const result= await collection.insertOne(person);
+        person._id = result.insertedId; //On assigne l'id auto-généré à l'objet person
+        return person;
     }
 }

@@ -18,4 +18,9 @@ personController.get('/:id', checkId, async (req,res) => {
         return;
     }
     res.json(person);
-})
+});
+
+personController.post('/', async (req,res) => {
+    const person = await personRepository.persist(req.body);
+    res.status(201).json(person);
+});

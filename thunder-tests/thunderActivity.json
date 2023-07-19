@@ -65,11 +65,11 @@
         "colId": "history",
         "containerId": "",
         "name": "localhost:3000/api/person",
-        "url": "localhost:3000/api/person/64b6567a6d7cc7e7ff0c841",
+        "url": "localhost:3000/api/person",
         "method": "GET",
         "sortNum": 0,
         "created": "2023-07-19T12:32:03.822Z",
-        "modified": "2023-07-19T14:25:22.292Z",
+        "modified": "2023-07-19T14:34:24.618Z",
         "headers": [],
         "params": [],
         "tests": []
@@ -128,6 +128,25 @@
         "modified": "2023-07-19T14:16:51.370Z",
         "headers": [],
         "params": [],
+        "tests": []
+    },
+    {
+        "_id": "7463bab3-fd1c-4a47-8097-6a732269b952",
+        "colId": "history",
+        "containerId": "",
+        "name": "localhost:3000/api/person",
+        "url": "localhost:3000/api/person",
+        "method": "POST",
+        "sortNum": 0,
+        "created": "2023-07-19T14:35:04.482Z",
+        "modified": "2023-07-19T14:35:04.482Z",
+        "headers": [],
+        "params": [],
+        "body": {
+            "type": "json",
+            "raw": "{\n    \"name\": \"Test\",\n    \"age\": 1,\n    \"address\": {\n      \"number\": \"56\",\n      \"street\": \"rue exemple\",\n      \"country\": \"France\",\n      \"city\": \"Grenoble\"\n    }\n  }",
+            "form": []
+        },
         "tests": []
     }
 ]

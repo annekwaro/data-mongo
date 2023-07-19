@@ -1,14 +1,15 @@
 import express from 'express';
-
+import { exampleController } from './controller/example';
+//On choisit le port sur lequel tournera l'application en indiquant 3000 par défaut mais modifiable par une variable d'environnement
 const port = process.env.PORT || 3000;
 
+//On crée l'application express
 const app = express();
 
-app.get('/', (req,res) => {
-    
-    res.json({message: 'bonjour'});
-})
+//Ici, on assigne notre contrôleur à la route /api/example, ce qui fait que toutes les routes définies dans le contrôleur seront préfixées par /api/example
+app.use('/api/example', exampleController);
 
+//On dit à l'application d'écouter les requêtes http sur le port choisit
 app.listen(port, () => {
     console.log('listening on http://localhost:'+port);
 });

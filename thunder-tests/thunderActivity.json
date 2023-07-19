@@ -26,5 +26,38 @@
         "headers": [],
         "params": [],
         "tests": []
+    },
+    {
+        "_id": "9b1e8086-dbf3-4f81-969c-5f9439f35d06",
+        "colId": "history",
+        "containerId": "",
+        "name": "localhost:3000/api/first",
+        "url": "localhost:3000/api/first",
+        "method": "GET",
+        "sortNum": 0,
+        "created": "2023-07-19T09:26:37.568Z",
+        "modified": "2023-07-19T09:26:37.568Z",
+        "headers": [],
+        "params": [],
+        "tests": []
+    },
+    {
+        "_id": "cc984178-62ee-4ae0-a222-ba623db45c1b",
+        "colId": "history",
+        "containerId": "",
+        "name": "localhost:3000/api/first",
+        "url": "localhost:3000/api/first",
+        "method": "POST",
+        "sortNum": 0,
+        "created": "2023-07-19T09:30:33.389Z",
+        "modified": "2023-07-19T09:30:44.241Z",
+        "headers": [],
+        "params": [],
+        "body": {
+            "type": "json",
+            "raw": "{\n  \"name\":\"toust\"\n}",
+            "form": []
+        },
+        "tests": []
     }
 ]

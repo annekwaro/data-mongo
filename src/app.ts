@@ -1,3 +1,4 @@
+import 'dotenv/config'; //Import nécessaire pour que les fichier .env soient pris en compte et charger dans le process.env
 import express from 'express';
 import { exampleController } from './controller/example';
 import { firstController } from './controller/first';

@@ -20,6 +20,8 @@ Un projet node.js utilisant express pour la partie contrôleurs et mongodb pour 
 ### findById et persist
 1. Dans le personRepository, rajouter une méthode findById(_id:string) qui va faire un findOne avec la collection pour rechercher un élément par son _id
 2. Dans le personController, créer une nouvelle route sur /:id et récupérer la valeur de l'id avec req.params.id et utiliser cette valeur dans le findById
-3. Faire une petite vérification que la person renvoyé n'est pas null, si elle l'est, on fait un res.status(404).end('Not Found') sinon on fait le res.json classique
-4. Dans personRepository, on rajoute un persist(person:Person) et on l'utilise dans un insertOne
+3. Faire une petite vérification que la person renvoyée n'est pas null, si elle l'est, on fait un res.status(404).end('Not Found') sinon on fait le res.json classique
+4. Dans personRepository, on rajoute un persist(person:Person) et on utilise l'argument dans un insertOne
 5. On fait une route en post dans le personController et on donne le req.body à manger au persist.
+
+Bonus: Faire en sorte d'assigner l'id généré à la person au moment du persist afin de pouvoir renvoyer une person complète dans la response

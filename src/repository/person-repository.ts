@@ -1,4 +1,5 @@
 
+import { ObjectId } from "mongodb";
 import { Person } from "../entities";
 import { connection } from "./connection"
 
@@ -8,5 +9,7 @@ export const personRepository = {
     findAll(){
         return collection.find().toArray();
     },
-    findById() {}
+    findById(_id:string) {
+        return collection.findOne(new ObjectId(_id));
+    }
 }

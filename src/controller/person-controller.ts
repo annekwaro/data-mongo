@@ -3,18 +3,6 @@ import { personRepository } from "../repository/person-repository";
 import { checkId } from "../middleware";
 import Joi from "joi";
 
-const personValidation = Joi.object({
-    name: Joi.string().required(),
-    age: Joi.number().positive().required(),
-    address: Joi.object({
-        number: Joi.string().required(),
-        street: Joi.string().required(),
-        city: Joi.string().required(),
-        country: Joi.string().required()
-    }).required()
-});
-
-
 
 export const personController = Router();
 
@@ -43,3 +31,41 @@ personController.post('/', async (req,res) => {
     res.status(201).json(person);
 });
 
+personController.delete('/:id', checkId, async (req,res)=> {
+    await personRepository.remove(req.params.id);
+    res.status(204).end();
+});
+
+
+personController.patch('/:id', checkId, async (req,res)=> {
+    const validation = personPatchValidation.validate(req.body, {abortEarly:false});
+    if(validation.error) {
+        res.status(400).json(validation.error);
+        return;
+    }
+    await personRepository.update(req.params.id, req.body);
+    res.json(req.body);
+});
+
+
+const personValidation = Joi.object({
+    name: Joi.string().required(),
+    age: Joi.number().positive().required(),
+    address: Joi.object({
+        number: Joi.string().required(),
+        street: Joi.string().required(),
+        city: Joi.string().required(),
+        country: Joi.string().required()
+    }).required()
+});
+
+const personPatchValidation = Joi.object({
+    name: Joi.string(),
+    age: Joi.number().positive(),
+    address: Joi.object({
+        number: Joi.string(),
+        street: Joi.string(),
+        city: Joi.string(),
+        country: Joi.string()
+    })
+});

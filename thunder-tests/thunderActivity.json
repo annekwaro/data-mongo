@@ -148,5 +148,38 @@
             "form": []
         },
         "tests": []
+    },
+    {
+        "_id": "e8a709a9-df35-41e2-a8fe-d2f4508db58b",
+        "colId": "history",
+        "containerId": "",
+        "name": "localhost:3000/api/person/64b8e4182fba9712bf5216a9",
+        "url": "localhost:3000/api/person/64b8e4182fba9712bf5216a9",
+        "method": "DELETE",
+        "sortNum": 0,
+        "created": "2023-07-20T10:13:34.303Z",
+        "modified": "2023-07-20T10:13:34.303Z",
+        "headers": [],
+        "params": [],
+        "tests": []
+    },
+    {
+        "_id": "3751bee7-841f-4e61-a32c-9ab166660ea4",
+        "colId": "history",
+        "containerId": "",
+        "name": "localhost:3000/api/person/64b8fc9c187373406cb6218f",
+        "url": "localhost:3000/api/person/64b8fc9c187373406cb6218f",
+        "method": "PATCH",
+        "sortNum": 0,
+        "created": "2023-07-20T10:20:19.561Z",
+        "modified": "2023-07-20T10:26:41.389Z",
+        "headers": [],
+        "params": [],
+        "body": {
+            "type": "json",
+            "raw": "{\n  \"name\":\"Bloup\",\n  \"toto\":\"bouiu\"\n  \n}",
+            "form": []
+        },
+        "tests": []
     }
 ]
